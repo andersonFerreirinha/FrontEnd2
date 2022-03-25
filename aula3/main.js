@@ -1,5 +1,5 @@
 import somar from './somar.js'
-import dividir from './dividr.js'
+import dividir from './dividir.js'
 import subtrair from './subtrair.js'
 import multiplicar from './multiplicar.js'
 
