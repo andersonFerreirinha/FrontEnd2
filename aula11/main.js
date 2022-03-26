@@ -6,7 +6,7 @@ let inputComentarioReferencia = document.querySelector('#inputComentario')
 let nomeUsuarioReferencia = document.querySelector('b')
 let comentarioReferencia = document.querySelector('p')
 let InformacoesUsuario = JSON.parse(localStorage.getItem('InformacoesUsuario'))
-// let ComentariosUser = JSON.parse(localStorage.getItem('Comentarios'))
+let ComentariosUser = JSON.parse(localStorage.getItem('Comentarios'))
  
 
 for(let controladorReferencia of controladoresReferencia){
@@ -29,7 +29,7 @@ for(let controladorReferencia of controladoresReferencia){
 }
 
 
-// let comentarios = []
+let comentarios = []
 botaoCadastrarReferencia.addEventListener('click', function (event) {
 
     let usuario = {
@@ -38,7 +38,7 @@ botaoCadastrarReferencia.addEventListener('click', function (event) {
         postagem: inputComentarioReferencia.value
     }
 
-    // comentarios.push(usuario)
+    comentarios.push(usuario)
 
     event.preventDefault()
     console.log(event)
@@ -46,7 +46,7 @@ botaoCadastrarReferencia.addEventListener('click', function (event) {
     localStorage.setItem('Comentarios',JSON.stringify(comentarios))
     nomeUsuarioReferencia.innerHTML = InformacoesUsuario.nome
          for(let comentarioUser of comentarios){
-         comentarioReferencia.innerHTML = `
+         comentarioReferencia.innerHTML += `
          <div>${comentarioUser.postagem}</div>
        `
 
