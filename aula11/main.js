@@ -1,7 +1,8 @@
 let botaoCadastrarReferencia = document.querySelector('#botaoCadastrar')
 let controladoresReferencia = document.querySelectorAll('.controlador')
-
-
+let inputNomeReferencia = document.querySelector('#inputNome')
+let inputSobrenomeReferencia = document.querySelector('#inputSobrenome')
+ 
 
 for(let controladorReferencia of controladoresReferencia){
 
@@ -22,12 +23,25 @@ for(let controladorReferencia of controladoresReferencia){
  })
 
 
+
+
+
 }
+
+
 
 botaoCadastrarReferencia.addEventListener('click', function (event) {
 
+    let usuario = {
+        nome: inputNomeReferencia.value,
+        sobrenome: inputSobrenomeReferencia.value
+    }
+
     event.preventDefault()
     console.log(event)
+    localStorage.setItem('InformacoesUsuario', JSON.stringify(usuario))
+    
+    location.href = 'home.html'
 
 
 })
