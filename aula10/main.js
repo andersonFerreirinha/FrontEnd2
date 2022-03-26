@@ -3,11 +3,15 @@ let sobrenomeReferencia = document.querySelector("#inputSobrenome")
 let botaoReferencia = document.querySelector('#botaoEnviar')
 let conteudoReferencia = document.querySelector('#conteudo')
 
+
+
 window.onload = function(){
     botaoReferencia.addEventListener('click', function(event){
     event.preventDefault();
     let textoInputNome = nomeReferencia.value;
-    let textoInputSobrenome = sobrenomeReferencia.value
+    let textoInputSobrenome = sobrenomeReferencia.value 
+    let substituirLetra = textoInputNome.replace(/a/g,"@")
+
     conteudoReferencia.innerHTML = `
     <div class="container">
     <div class="row">
@@ -19,7 +23,13 @@ window.onload = function(){
     <h3>Função trim</h3>
     <p>${textoInputNome.trim()}</p>
     <h3>Função Concat</h3>
-    <p>${textoInputNome.concat(" ", textoInputSobrenome)}
+    <p>${textoInputNome.concat(" ", textoInputSobrenome)}</p>
+
+    <h3>Função replace</h3>
+
+    <p>${substituirLetra}</p>
+    
+    
     </div>
     </div>
     `
@@ -29,31 +39,3 @@ window.onload = function(){
 })
 
 }
-
-// window.onload = function() {
-
-//     // Adicionando um novo evento para o botão de soma
-//     btSomarReference.addEventListener('click', function(event) {
-//         event.preventDefault()
-//         resultadoReference.innerHTML = somar(numero1Reference.value, numero2Reference.value)
-//     })
-
-//     btSubtrairReference.addEventListener('click', function(event) {
-//         event.preventDefault()
-//         resultadoReference.innerHTML = subtrair(numero1Reference.value, numero2Reference.value)
-//     })
-
-//     btMultiplicarReference.addEventListener('click', function(event) {
-//         event.preventDefault()
-//         resultadoReference.innerHTML = multiplicar(numero1Reference.value, numero2Reference.value)
-//     })
-
-//     btDividirReference.addEventListener('click', function(event) {
-//         event.preventDefault()
-//         resultadoReference.innerHTML = dividir(numero1Reference.value, numero2Reference.value)
-//     })
-// }
-
-
-
-
