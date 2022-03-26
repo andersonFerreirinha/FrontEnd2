@@ -50,6 +50,6 @@ botaoCadastrarReferencia.addEventListener('click', function (event) {
          <div>${comentarioUser.postagem}</div>
        `
 
-    // }
+     }
 })
 
